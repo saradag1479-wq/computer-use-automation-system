@@ -74,8 +74,14 @@ The demo only allows the local application and a small set of browser actions. C
 
 ## Human handoff
 
-If the agent gets stuck, the handoff record captures the task, current step, browser state, screenshot, and reason. A human can then take over the same session.
+## Human handoff
+
+If the agent gets stuck, the handoff record captures the task, current step, browser state, screenshot, and reason for escalation. In a production implementation, a human operator can then take over the same live session and return control to the automation.
+
 
 ## Submission notes
 
-Before submitting, run the discovery flow yourself and put the real generated artifact, logs, screenshots, and replay result under `evidence/`. Do not submit real credentials or real customer data.
+## Submission notes
+
+The repository includes example discovery and replay evidence under `evidence/`. The demo uses synthetic local data only. No real credentials or customer data are included.
+
