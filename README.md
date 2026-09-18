@@ -72,14 +72,12 @@ The saved capability contains the actual steps needed to perform the job. Replay
 
 The demo only allows the local application and a small set of browser actions. Credentials, tokens, and sensitive fields should not be stored in capabilities or logs.
 
-## Human handoff
 
 ## Human handoff
 
 If the agent gets stuck, the handoff record captures the task, current step, browser state, screenshot, and reason for escalation. In a production implementation, a human operator can then take over the same live session and return control to the automation.
 
 
-## Submission notes
 
 ## Submission notes
 
