@@ -1,0 +1,76 @@
+{
+  "capability_id": "member_lookup",
+  "version": 1,
+  "description": "Find member M1001 and report the member name and account status",
+  "target_surface": {
+    "base_url": "http://127.0.0.1:8000"
+  },
+  "inputs": [
+    {
+      "name": "member_id",
+      "type": "string",
+      "required": true
+    }
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "action": "fill",
+      "target": {
+        "strategy": "label",
+        "value": "Member ID"
+      },
+      "value": "{{member_id}}",
+      "rationale": "Enter the requested member ID.",
+      "timeout_ms": 5000,
+      "retry_count": 1
+    },
+    {
+      "id": "s2",
+      "action": "click",
+      "target": {
+        "strategy": "text",
+        "value": "Search Member"
+      },
+      "value": "",
+      "rationale": "Search for the member.",
+      "timeout_ms": 5000,
+      "retry_count": 1
+    },
+    {
+      "id": "s3",
+      "action": "extract_text",
+      "target": {
+        "strategy": "text",
+        "value": "M1001"
+      },
+      "value": "",
+      "rationale": "Read the displayed member name and account status.",
+      "timeout_ms": 5000,
+      "retry_count": 1
+    }
+  ],
+  "outputs": [
+    {
+      "name": "result",
+      "type": "string"
+    }
+  ],
+  "checkpoint": {
+    "type": "text_contains",
+    "value": "Member Name:"
+  },
+  "safety": {
+    "allowed_domains": [
+      "127.0.0.1",
+      "localhost"
+    ],
+    "allowed_actions": [
+      "assert_text",
+      "click",
+      "extract_text",
+      "fill",
+      "goto"
+    ]
+  }
+}
